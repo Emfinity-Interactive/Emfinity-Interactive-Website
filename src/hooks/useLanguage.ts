@@ -72,9 +72,9 @@ const translations: Record<Language, LanguageContent> = {
       contact: 'İletişim',
     },
     hero: {
-      title: 'Daha yeni başlıyoruz.',
+      title: 'Yolculuğa başlıyoruz.',
       subtitle: 'Mümkün olanın sınırlarını zorlayan yenilikçi dijital deneyimler yaratan yaratıcı bir yazılım stüdyosuyuz.',
-      viewWork: 'Çalışmalarımızı Görün',
+      viewWork: 'Çalışmalarımızı İnceleyin',
       getInTouch: 'İletişime Geçin',
     },
     about: {

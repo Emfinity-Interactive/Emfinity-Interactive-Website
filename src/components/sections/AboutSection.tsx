@@ -1,6 +1,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { Code, Palette, Zap, Users } from 'lucide-react';
+import { useLanguage } from '../../hooks/useLanguage';
 
 const skills = [
   {
@@ -26,6 +27,8 @@ const skills = [
 ];
 
 export const AboutSection: React.FC = () => {
+  const { t } = useLanguage();
+  
   return (
     <section id="about" className="py-20 px-4 sm:px-6 lg:px-8 bg-gray-50 dark:bg-slate-800/50">
       <div className="max-w-7xl mx-auto">
@@ -38,7 +41,7 @@ export const AboutSection: React.FC = () => {
         >
           <h2 className="text-4xl sm:text-5xl md:text-6xl font-bold mb-6">
             <span className="bg-gradient-to-r from-primary-blue to-primary-turquoise bg-clip-text text-transparent">
-              About Us
+              {t.about.title}
             </span>
           </h2>
           <div className="max-w-4xl mx-auto">

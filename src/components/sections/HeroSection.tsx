@@ -2,8 +2,11 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import { ChevronDown } from 'lucide-react';
 import { AnimatedBackground } from '../AnimatedBackground';
+import { useLanguage } from '../../hooks/useLanguage';
 
 export const HeroSection: React.FC = () => {
+  const { t } = useLanguage();
+  
   const scrollToAbout = () => {
     document.getElementById('about')?.scrollIntoView({ behavior: 'smooth' });
   };
@@ -46,7 +49,7 @@ export const HeroSection: React.FC = () => {
             className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-bold leading-tight"
           >
             <span className="bg-gradient-to-r from-primary-blue via-primary-gradient to-primary-turquoise bg-clip-text text-transparent">
-              Just getting started.
+              {t.hero.title}
             </span>
           </motion.h1>
 
@@ -57,8 +60,7 @@ export const HeroSection: React.FC = () => {
             transition={{ duration: 0.8, delay: 0.6 }}
             className="text-xl sm:text-2xl md:text-3xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto leading-relaxed"
           >
-            We're a creative software studio crafting innovative digital experiences 
-            that push the boundaries of what's possible.
+            {t.hero.subtitle}
           </motion.p>
 
           {/* CTA Buttons */}
@@ -74,7 +76,7 @@ export const HeroSection: React.FC = () => {
               whileTap={{ scale: 0.95 }}
               className="px-8 py-4 bg-gradient-to-r from-primary-blue to-primary-gradient text-white font-semibold rounded-full shadow-lg hover:shadow-xl transition-all duration-300"
             >
-              View Our Work
+              {t.hero.viewWork}
             </motion.button>
             
             <motion.button
@@ -83,7 +85,7 @@ export const HeroSection: React.FC = () => {
               whileTap={{ scale: 0.95 }}
               className="px-8 py-4 border-2 border-primary-blue dark:border-primary-turquoise text-primary-blue dark:text-primary-turquoise font-semibold rounded-full hover:bg-primary-blue hover:text-white dark:hover:bg-primary-turquoise dark:hover:text-primary-dark transition-all duration-300"
             >
-              Get In Touch
+              {t.hero.getInTouch}
             </motion.button>
           </motion.div>
         </motion.div>
