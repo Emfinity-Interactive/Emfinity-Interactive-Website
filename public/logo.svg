@@ -1,0 +1,42 @@
+<svg viewBox="0 0 800 800" xmlns="http://www.w3.org/2000/svg">
+  <!-- Circular gradient background -->
+  <defs>
+    <radialGradient id="bgGradient" cx="50%" cy="30%" r="70%">
+      <stop offset="0%" style="stop-color:#87CEEB;stop-opacity:1" />
+      <stop offset="40%" style="stop-color:#4682B4;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#1B3C8F;stop-opacity:1" />
+    </radialGradient>
+    <linearGradient id="logoGradient" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#1B3C8F;stop-opacity:1" />
+      <stop offset="50%" style="stop-color:#2563EB;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#14B8A6;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+  
+  <!-- Circular background -->
+  <circle cx="400" cy="400" r="380" fill="url(#bgGradient)"/>
+  
+  <!-- Infinity symbol base -->
+  <path d="M200 400 C200 350, 250 300, 320 300 C370 300, 400 330, 400 400 C400 330, 430 300, 480 300 C550 300, 600 350, 600 400 C600 450, 550 500, 480 500 C430 500, 400 470, 400 400 C400 470, 370 500, 320 500 C250 500, 200 450, 200 400 Z" fill="url(#logoGradient)" stroke="white" stroke-width="4"/>
+  
+  <!-- Medical cross in left loop -->
+  <g transform="translate(300, 380)">
+    <rect x="-3" y="-20" width="6" height="40" fill="white" rx="2"/>
+    <rect x="-18" y="-3" width="36" height="6" fill="white" rx="2"/>
+  </g>
+  
+  <!-- Game controller in right loop -->
+  <g transform="translate(500, 400)">
+    <!-- Controller base -->
+    <ellipse cx="0" cy="0" rx="25" ry="15" fill="white"/>
+    <!-- Buttons -->
+    <circle cx="-8" cy="-4" r="3" fill="url(#logoGradient)"/>
+    <circle cx="8" cy="-4" r="3" fill="url(#logoGradient)"/>
+    <circle cx="-8" cy="4" r="3" fill="url(#logoGradient)"/>
+    <circle cx="8" cy="4" r="3" fill="url(#logoGradient)"/>
+  </g>
+  
+  <!-- Company text -->
+  <text x="400" y="580" text-anchor="middle" font-family="Arial, sans-serif" font-size="42" font-weight="bold" fill="#1B3C8F">EMFINITY</text>
+  <text x="400" y="620" text-anchor="middle" font-family="Arial, sans-serif" font-size="24" font-weight="normal" fill="#14B8A6">INTERACTIVE</text>
+</svg>

@@ -27,12 +27,12 @@ export const HeroSection: React.FC = () => {
             className="flex justify-center mb-8"
           >
             <div className="relative">
-              <div className="absolute inset-0 bg-gradient-to-r from-primary-blue to-primary-turquoise rounded-full blur-xl opacity-30 animate-pulse" />
-              <div className="relative p-4 rounded-2xl bg-white/10 dark:bg-white/5 backdrop-blur-sm border border-white/20 dark:border-white/10">
+              <div className="absolute inset-0 bg-gradient-to-r from-primary-blue to-primary-turquoise rounded-full blur-2xl opacity-40 animate-pulse scale-110" />
+              <div className="relative p-2 rounded-full">
                 <img 
-                  src="/logo.png" 
+                  src="/logo.svg" 
                   alt="Emfinity Interactive" 
-                  className="h-40 w-auto sm:h-48 md:h-56 lg:h-64 xl:h-72 dark:brightness-110 dark:contrast-110"
+                  className="h-48 w-48 sm:h-56 sm:w-56 md:h-64 md:w-64 lg:h-72 lg:w-72 xl:h-80 xl:w-80 object-contain"
                 />
               </div>
             </div>
