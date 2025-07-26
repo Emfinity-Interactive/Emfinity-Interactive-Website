@@ -74,7 +74,7 @@ export const Navigation: React.FC<NavigationProps> = ({ isDark, onThemeToggle })
             className="flex items-center space-x-3"
           >
             <img 
-              src="/logo.svg" 
+              src={isDark ? "/logo_light.svg" : "/logo_dark.svg"}
               alt="Emfinity Interactive" 
               className="h-14 w-14 object-contain"
             />
