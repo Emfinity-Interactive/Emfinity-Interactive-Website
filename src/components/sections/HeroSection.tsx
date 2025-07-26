@@ -35,9 +35,10 @@ export const HeroSection: React.FC = () => {
               <div className="absolute inset-0 bg-gradient-to-r from-primary-blue to-primary-turquoise rounded-full blur-2xl opacity-40 animate-pulse scale-110" />
               <div className="relative p-2 rounded-full">
                 <img 
+                  key={isDark ? 'dark-logo' : 'light-logo'}
                   src={isDark ? "/logo_light.svg" : "/logo_dark.svg"}
                   alt="Emfinity Interactive" 
-                  className="h-48 w-48 sm:h-56 sm:w-56 md:h-64 md:w-64 lg:h-72 lg:w-72 xl:h-80 xl:w-80 object-contain"
+                  className="h-48 w-48 sm:h-56 sm:w-56 md:h-64 md:w-64 lg:h-72 lg:w-72 xl:h-80 xl:w-80 object-contain transition-opacity duration-300"
                 />
               </div>
             </div>

@@ -4,6 +4,7 @@ import { HeroSection } from './components/sections/HeroSection';
 import { AboutSection } from './components/sections/AboutSection';
 import { ProjectsSection } from './components/sections/ProjectsSection';
 import { ContactSection } from './components/sections/ContactSection';
+import { Footer } from './components/Footer';
 import { useTheme } from './hooks/useTheme';
 
 function App() {
@@ -18,6 +19,7 @@ function App() {
         <ProjectsSection />
         <ContactSection />
       </main>
+      <Footer />
     </div>
   );
 }
