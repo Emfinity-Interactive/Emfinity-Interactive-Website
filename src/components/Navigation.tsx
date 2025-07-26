@@ -2,24 +2,28 @@ import React, { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import { Menu, X } from 'lucide-react';
 import { ThemeToggle } from './ThemeToggle';
+import { LanguageToggle } from './LanguageToggle';
 import { NavItem } from '../types';
+import { useLanguage } from '../hooks/useLanguage';
 
 interface NavigationProps {
   isDark: boolean;
   onThemeToggle: () => void;
 }
 
-const navItems: NavItem[] = [
-  { id: 'home', label: 'Home', href: '#home' },
-  { id: 'about', label: 'About', href: '#about' },
-  { id: 'projects', label: 'Projects', href: '#projects' },
-  { id: 'contact', label: 'Contact', href: '#contact' },
-];
-
 export const Navigation: React.FC<NavigationProps> = ({ isDark, onThemeToggle }) => {
   const [isOpen, setIsOpen] = useState(false);
   const [activeSection, setActiveSection] = useState('home');
   const [scrolled, setScrolled] = useState(false);
+  const { language, changeLanguage, t } = useLanguage();
+
+  // Dynamic nav items based on language
+  const navItems: NavItem[] = [
+    { id: 'home', label: t.navigation.home, href: '#home' },
+    { id: 'about', label: t.navigation.about, href: '#about' },
+    { id: 'projects', label: t.navigation.projects, href: '#projects' },
+    { id: 'contact', label: t.navigation.contact, href: '#contact' },
+  ];
 
   useEffect(() => {
     const handleScroll = () => {
@@ -73,7 +77,7 @@ export const Navigation: React.FC<NavigationProps> = ({ isDark, onThemeToggle })
             <img 
               src="/logo.png" 
               alt="Emfinity Interactive" 
-              className="h-10 w-auto dark:brightness-0 dark:invert"
+              className="h-12 w-auto dark:brightness-90 dark:contrast-125"
             />
             <span className="text-xl font-bold bg-gradient-to-r from-primary-blue to-primary-turquoise bg-clip-text text-transparent">
               Emfinity Interactive
@@ -81,7 +85,7 @@ export const Navigation: React.FC<NavigationProps> = ({ isDark, onThemeToggle })
           </motion.div>
 
           {/* Desktop Navigation */}
-          <div className="hidden md:flex items-center space-x-8">
+          <div className="hidden md:flex items-center space-x-6">
             {navItems.map((item) => (
               <motion.button
                 key={item.id}
@@ -103,11 +107,21 @@ export const Navigation: React.FC<NavigationProps> = ({ isDark, onThemeToggle })
                 )}
               </motion.button>
             ))}
-            <ThemeToggle isDark={isDark} onToggle={onThemeToggle} />
+            <div className="flex items-center space-x-3">
+              <LanguageToggle 
+                language={language} 
+                onLanguageChange={changeLanguage} 
+              />
+              <ThemeToggle isDark={isDark} onToggle={onThemeToggle} />
+            </div>
           </div>
 
           {/* Mobile menu button */}
-          <div className="md:hidden flex items-center space-x-4">
+          <div className="md:hidden flex items-center space-x-3">
+            <LanguageToggle 
+              language={language} 
+              onLanguageChange={changeLanguage} 
+            />
             <ThemeToggle isDark={isDark} onToggle={onThemeToggle} />
             <button
               onClick={() => setIsOpen(!isOpen)}

@@ -5,9 +5,11 @@ import { AboutSection } from './components/sections/AboutSection';
 import { ProjectsSection } from './components/sections/ProjectsSection';
 import { ContactSection } from './components/sections/ContactSection';
 import { useTheme } from './hooks/useTheme';
+import { useLanguage } from './hooks/useLanguage';
 
 function App() {
   const { isDark, toggleTheme } = useTheme();
+  const { language, changeLanguage, t } = useLanguage();
 
   return (
     <div className="min-h-screen bg-background-light dark:bg-background-dark transition-colors duration-300">

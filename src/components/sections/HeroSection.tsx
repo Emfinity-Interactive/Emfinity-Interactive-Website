@@ -28,11 +28,13 @@ export const HeroSection: React.FC = () => {
           >
             <div className="relative">
               <div className="absolute inset-0 bg-gradient-to-r from-primary-blue to-primary-turquoise rounded-full blur-xl opacity-30 animate-pulse" />
-              <img 
-                src="/logo.png" 
-                alt="Emfinity Interactive" 
-                className="relative h-32 w-auto sm:h-40 md:h-48 lg:h-56 dark:brightness-0 dark:invert"
-              />
+              <div className="relative p-4 rounded-2xl bg-white/10 dark:bg-white/5 backdrop-blur-sm border border-white/20 dark:border-white/10">
+                <img 
+                  src="/logo.png" 
+                  alt="Emfinity Interactive" 
+                  className="h-40 w-auto sm:h-48 md:h-56 lg:h-64 xl:h-72 dark:brightness-110 dark:contrast-110"
+                />
+              </div>
             </div>
           </motion.div>
 
