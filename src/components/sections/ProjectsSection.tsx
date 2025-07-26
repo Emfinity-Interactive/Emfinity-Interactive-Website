@@ -2,8 +2,10 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import { ExternalLink, Github } from 'lucide-react';
 import { projects } from '../../data/projects';
+import { useLanguage } from '../../hooks/useLanguage';
 
 export const ProjectsSection: React.FC = () => {
+  const { t } = useLanguage();
   return (
     <section id="projects" className="py-20 px-4 sm:px-6 lg:px-8">
       <div className="max-w-7xl mx-auto">
@@ -16,7 +18,7 @@ export const ProjectsSection: React.FC = () => {
         >
           <h2 className="text-4xl sm:text-5xl md:text-6xl font-bold mb-6">
             <span className="bg-gradient-to-r from-primary-blue to-primary-turquoise bg-clip-text text-transparent">
-              Our Projects
+              {t.projects.title}
             </span>
           </h2>
           <p className="text-xl text-gray-600 dark:text-gray-400 max-w-3xl mx-auto">

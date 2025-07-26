@@ -1,6 +1,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { Github, Linkedin, Mail, MapPin } from 'lucide-react';
+import { useLanguage } from '../../hooks/useLanguage';
 
 const contactLinks = [
   {
@@ -24,6 +25,8 @@ const contactLinks = [
 ];
 
 export const ContactSection: React.FC = () => {
+  const { t } = useLanguage();
+  
   return (
     <section id="contact" className="py-20 px-4 sm:px-6 lg:px-8 bg-gray-50 dark:bg-slate-800/50">
       <div className="max-w-4xl mx-auto">
@@ -36,12 +39,11 @@ export const ContactSection: React.FC = () => {
         >
           <h2 className="text-4xl sm:text-5xl md:text-6xl font-bold mb-6">
             <span className="bg-gradient-to-r from-primary-blue to-primary-turquoise bg-clip-text text-transparent">
-              Let's Connect
+              {t.contact.title}
             </span>
           </h2>
           <p className="text-xl text-gray-600 dark:text-gray-400 mb-12 max-w-2xl mx-auto">
-            Ready to bring your ideas to life? Let's discuss how we can work together 
-            to create something amazing.
+            {t.contact.description}
           </p>
         </motion.div>
 
@@ -87,7 +89,7 @@ export const ContactSection: React.FC = () => {
         >
           <div className="inline-flex items-center space-x-2 text-gray-600 dark:text-gray-400 mb-8">
             <MapPin className="w-5 h-5" />
-            <span>Based in the Digital Realm, Working Globally</span>
+            <span>{t.contact.location}</span>
           </div>
           
           <motion.div
@@ -95,16 +97,16 @@ export const ContactSection: React.FC = () => {
             className="inline-block"
           >
             <div className="bg-gradient-to-r from-primary-blue to-primary-turquoise p-8 rounded-2xl text-white shadow-xl">
-              <h3 className="text-2xl font-bold mb-2">Ready to Start?</h3>
-              <p className="text-blue-100 mb-4">
-                Let's turn your vision into reality
+              <h3 className="text-2xl font-bold mb-4">{t.contact.ctaTitle}</h3>
+              <p className="text-blue-100 mb-6">
+                {t.contact.ctaDescription}
               </p>
               <motion.button
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
                 className="px-6 py-3 bg-white text-primary-blue font-semibold rounded-full hover:bg-gray-100 transition-colors duration-300"
               >
-                Get In Touch
+                {t.contact.ctaButton}
               </motion.button>
             </div>
           </motion.div>
