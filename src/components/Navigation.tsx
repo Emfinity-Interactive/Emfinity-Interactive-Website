@@ -73,7 +73,7 @@ export const Navigation: React.FC<NavigationProps> = ({ isDark, onThemeToggle })
             <img 
               src="/logo.png" 
               alt="Emfinity Interactive" 
-              className="h-8 w-auto"
+              className="h-10 w-auto dark:brightness-0 dark:invert"
             />
             <span className="text-xl font-bold bg-gradient-to-r from-primary-blue to-primary-turquoise bg-clip-text text-transparent">
               Emfinity Interactive

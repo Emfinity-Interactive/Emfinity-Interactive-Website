@@ -31,7 +31,7 @@ export const HeroSection: React.FC = () => {
               <img 
                 src="/logo.png" 
                 alt="Emfinity Interactive" 
-                className="relative h-20 w-auto sm:h-24 md:h-28"
+                className="relative h-32 w-auto sm:h-40 md:h-48 lg:h-56 dark:brightness-0 dark:invert"
               />
             </div>
           </motion.div>
