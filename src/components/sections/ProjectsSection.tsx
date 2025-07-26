@@ -103,23 +103,6 @@ export const ProjectsSection: React.FC = () => {
             </motion.div>
           ))}
         </div>
-
-        {/* View More Button */}
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.8, delay: 0.5 }}
-          className="text-center mt-12"
-        >
-          <motion.button
-            whileHover={{ scale: 1.05 }}
-            whileTap={{ scale: 0.95 }}
-            className="px-8 py-4 border-2 border-primary-blue dark:border-primary-turquoise text-primary-blue dark:text-primary-turquoise font-semibold rounded-full hover:bg-primary-blue hover:text-white dark:hover:bg-primary-turquoise dark:hover:text-primary-dark transition-all duration-300"
-          >
-            View All Projects
-          </motion.button>
-        </motion.div>
       </div>
     </section>
   );

@@ -2,7 +2,6 @@ import React, { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import { Menu, X } from 'lucide-react';
 import { ThemeToggle } from './ThemeToggle';
-import { LanguageToggle } from './LanguageToggle';
 import { NavItem } from '../types';
 import { useLanguage } from '../hooks/useLanguage';
 
@@ -15,7 +14,7 @@ export const Navigation: React.FC<NavigationProps> = ({ isDark, onThemeToggle })
   const [isOpen, setIsOpen] = useState(false);
   const [activeSection, setActiveSection] = useState('home');
   const [scrolled, setScrolled] = useState(false);
-  const { language, changeLanguage, t } = useLanguage();
+  const { t } = useLanguage();
 
   // Dynamic nav items based on language
   const navItems: NavItem[] = [
@@ -108,20 +107,12 @@ export const Navigation: React.FC<NavigationProps> = ({ isDark, onThemeToggle })
               </motion.button>
             ))}
             <div className="flex items-center space-x-3">
-              <LanguageToggle 
-                language={language} 
-                onLanguageChange={changeLanguage} 
-              />
               <ThemeToggle isDark={isDark} onToggle={onThemeToggle} />
             </div>
           </div>
 
           {/* Mobile menu button */}
           <div className="md:hidden flex items-center space-x-3">
-            <LanguageToggle 
-              language={language} 
-              onLanguageChange={changeLanguage} 
-            />
             <ThemeToggle isDark={isDark} onToggle={onThemeToggle} />
             <button
               onClick={() => setIsOpen(!isOpen)}

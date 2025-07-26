@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 
-export type Language = 'en' | 'tr';
+export type Language = 'en';
 
 export interface LanguageContent {
   navigation: {
@@ -22,6 +22,7 @@ export interface LanguageContent {
   projects: {
     title: string;
     viewProject: string;
+    description: string;
   };
   contact: {
     title: string;
@@ -30,6 +31,10 @@ export interface LanguageContent {
     email: string;
     message: string;
     send: string;
+    location: string;
+    ctaTitle: string;
+    ctaDescription: string;
+    ctaButton: string;
   };
 }
 
@@ -54,6 +59,7 @@ const translations: Record<Language, LanguageContent> = {
     projects: {
       title: 'Our Projects',
       viewProject: 'View Project',
+      description: 'Explore our latest work and see how we bring ideas to life.',
     },
     contact: {
       title: 'Get In Touch',
@@ -62,36 +68,10 @@ const translations: Record<Language, LanguageContent> = {
       email: 'Email',
       message: 'Message',
       send: 'Send Message',
-    },
-  },
-  tr: {
-    navigation: {
-      home: 'Ana Sayfa',
-      about: 'Hakkımızda',
-      projects: 'Projeler',
-      contact: 'İletişim',
-    },
-    hero: {
-      title: 'Yolculuğa başlıyoruz.',
-      subtitle: 'Mümkün olanın sınırlarını zorlayan yenilikçi dijital deneyimler yaratan yaratıcı bir yazılım stüdyosuyuz.',
-      viewWork: 'Çalışmalarımızı İnceleyin',
-      getInTouch: 'İletişime Geçin',
-    },
-    about: {
-      title: 'Hakkımızda',
-      description: 'Tutkulu geliştiriciler ve tasarımcılardan oluşan bir ekibiz.',
-    },
-    projects: {
-      title: 'Projelerimiz',
-      viewProject: 'Projeyi Görüntüle',
-    },
-    contact: {
-      title: 'İletişime Geçin',
-      description: 'Birlikte harika bir şeyler yaratın.',
-      name: 'İsim',
-      email: 'E-posta',
-      message: 'Mesaj',
-      send: 'Mesaj Gönder',
+      location: 'Based in Turkey, Working Worldwide',
+      ctaTitle: 'Ready to Start Your Project?',
+      ctaDescription: 'Let\'s discuss your ideas and bring them to life.',
+      ctaButton: 'Start a Conversation',
     },
   },
 };
@@ -101,7 +81,7 @@ export const useLanguage = () => {
 
   useEffect(() => {
     const savedLanguage = localStorage.getItem('language') as Language;
-    if (savedLanguage && (savedLanguage === 'en' || savedLanguage === 'tr')) {
+    if (savedLanguage && savedLanguage === 'en') {
       setLanguage(savedLanguage);
     }
   }, []);
