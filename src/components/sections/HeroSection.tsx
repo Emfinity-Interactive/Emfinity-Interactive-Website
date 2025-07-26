@@ -1,0 +1,107 @@
+import React from 'react';
+import { motion } from 'framer-motion';
+import { ChevronDown } from 'lucide-react';
+import { AnimatedBackground } from '../AnimatedBackground';
+
+export const HeroSection: React.FC = () => {
+  const scrollToAbout = () => {
+    document.getElementById('about')?.scrollIntoView({ behavior: 'smooth' });
+  };
+
+  return (
+    <section id="home" className="relative min-h-screen flex items-center justify-center overflow-hidden">
+      <AnimatedBackground />
+      
+      <div className="relative z-10 text-center px-4 sm:px-6 lg:px-8 max-w-5xl mx-auto">
+        <motion.div
+          initial={{ opacity: 0, y: 50 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, ease: "easeOut" }}
+          className="space-y-8"
+        >
+          {/* Logo */}
+          <motion.div
+            initial={{ opacity: 0, scale: 0.8 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 0.8, delay: 0.2 }}
+            className="flex justify-center mb-8"
+          >
+            <div className="relative">
+              <div className="absolute inset-0 bg-gradient-to-r from-primary-blue to-primary-turquoise rounded-full blur-xl opacity-30 animate-pulse" />
+              <img 
+                src="/logo.png" 
+                alt="Emfinity Interactive" 
+                className="relative h-20 w-auto sm:h-24 md:h-28"
+              />
+            </div>
+          </motion.div>
+
+          {/* Main Heading */}
+          <motion.h1
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.4 }}
+            className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-bold leading-tight"
+          >
+            <span className="bg-gradient-to-r from-primary-blue via-primary-gradient to-primary-turquoise bg-clip-text text-transparent">
+              Just getting started.
+            </span>
+          </motion.h1>
+
+          {/* Subtitle */}
+          <motion.p
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.6 }}
+            className="text-xl sm:text-2xl md:text-3xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto leading-relaxed"
+          >
+            We're a creative software studio crafting innovative digital experiences 
+            that push the boundaries of what's possible.
+          </motion.p>
+
+          {/* CTA Buttons */}
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.8 }}
+            className="flex flex-col sm:flex-row gap-4 justify-center items-center pt-8"
+          >
+            <motion.button
+              onClick={() => document.getElementById('projects')?.scrollIntoView({ behavior: 'smooth' })}
+              whileHover={{ scale: 1.05, boxShadow: "0 20px 40px rgba(27, 60, 143, 0.3)" }}
+              whileTap={{ scale: 0.95 }}
+              className="px-8 py-4 bg-gradient-to-r from-primary-blue to-primary-gradient text-white font-semibold rounded-full shadow-lg hover:shadow-xl transition-all duration-300"
+            >
+              View Our Work
+            </motion.button>
+            
+            <motion.button
+              onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
+              className="px-8 py-4 border-2 border-primary-blue dark:border-primary-turquoise text-primary-blue dark:text-primary-turquoise font-semibold rounded-full hover:bg-primary-blue hover:text-white dark:hover:bg-primary-turquoise dark:hover:text-primary-dark transition-all duration-300"
+            >
+              Get In Touch
+            </motion.button>
+          </motion.div>
+        </motion.div>
+      </div>
+
+      {/* Scroll Indicator */}
+      <motion.button
+        onClick={scrollToAbout}
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ delay: 1.5 }}
+        className="absolute bottom-8 left-1/2 transform -translate-x-1/2 text-gray-400 hover:text-primary-blue dark:hover:text-primary-turquoise transition-colors duration-300"
+      >
+        <motion.div
+          animate={{ y: [0, 10, 0] }}
+          transition={{ duration: 2, repeat: Infinity }}
+        >
+          <ChevronDown className="w-8 h-8" />
+        </motion.div>
+      </motion.button>
+    </section>
+  );
+};
