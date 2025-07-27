@@ -196,24 +196,45 @@ export const Footer: React.FC = () => {
           transition={{ duration: 0.6, delay: 0.4 }}
           className="pt-8 border-t border-gray-200 dark:border-gray-800"
         >
-          <div className="w-full flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
-            <div className="w-full md:w-auto flex flex-col md:flex-row items-center md:items-start space-y-2 md:space-y-0 md:space-x-2 text-gray-600 dark:text-gray-400 text-sm text-center md:text-left">
-              <span>{t.footer.bottom.copyright}</span>
-              <span className="hidden md:inline">•</span>
-              <span className="flex items-center justify-center space-x-1">
-                <span>Made with</span>
-                <Heart className="w-4 h-4 text-red-500 fill-current" />
-                <span>in Ankara</span>
-              </span>
+          <div className="w-full flex flex-col md:flex-row justify-between items-center space-y-6 md:space-y-0">
+            <div className="w-full md:w-auto">
+              <div className="flex flex-col items-center md:items-start space-y-4">
+                <motion.div
+                  whileHover={{ scale: 1.02 }}
+                  className="flex items-center space-x-2"
+                >
+                  <span className="text-base font-medium text-gray-700 dark:text-gray-300">
+                    {t.footer.bottom.copyright}
+                  </span>
+                </motion.div>
+                <motion.div
+                  whileHover={{ scale: 1.02 }}
+                  className="flex items-center space-x-2 bg-gradient-to-r from-primary-blue/10 to-primary-turquoise/10 px-4 py-2 rounded-full"
+                >
+                  <span className="text-sm text-gray-600 dark:text-gray-400">Made with</span>
+                  <Heart className="w-4 h-4 text-red-500 fill-current animate-pulse" />
+                  <span className="text-sm font-medium bg-gradient-to-r from-primary-blue to-primary-turquoise bg-clip-text text-transparent">
+                    in Ankara
+                  </span>
+                </motion.div>
+              </div>
             </div>
             
-            <div className="w-full md:w-auto flex items-center justify-center md:justify-end space-x-4 sm:space-x-6 text-sm">
-              <button className="text-gray-600 dark:text-gray-400 hover:text-primary-blue dark:hover:text-primary-turquoise transition-colors duration-300">
+            <div className="flex flex-col sm:flex-row items-center space-y-4 sm:space-y-0 sm:space-x-6">
+              <motion.button
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
+                className="px-4 py-2 text-sm font-medium text-gray-600 dark:text-gray-400 hover:text-primary-blue dark:hover:text-primary-turquoise transition-colors duration-300 rounded-lg hover:bg-gray-100 dark:hover:bg-slate-800"
+              >
                 {t.footer.bottom.privacy}
-              </button>
-              <button className="text-gray-600 dark:text-gray-400 hover:text-primary-blue dark:hover:text-primary-turquoise transition-colors duration-300">
+              </motion.button>
+              <motion.button
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
+                className="px-4 py-2 text-sm font-medium text-gray-600 dark:text-gray-400 hover:text-primary-blue dark:hover:text-primary-turquoise transition-colors duration-300 rounded-lg hover:bg-gray-100 dark:hover:bg-slate-800"
+              >
                 {t.footer.bottom.terms}
-              </button>
+              </motion.button>
             </div>
           </div>
         </motion.div>
