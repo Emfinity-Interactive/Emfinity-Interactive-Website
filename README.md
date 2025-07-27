@@ -1,18 +1,24 @@
 # Emfinity Interactive Website
 
-A modern, bilingual (English/Turkish) interactive website built with React, TypeScript, and Tailwind CSS.
+Modern ve duyarlı tasarıma sahip kurumsal web sitesi. React, TypeScript, Tailwind CSS ve Framer Motion kullanılarak geliştirilmiştir.
 
-## 🌟 Features
+## 🚀 Özellikler
 
-- **Bilingual Support**: Full English/Turkish language switching with localStorage persistence
-- **Dark/Light Theme**: Automatic theme detection and manual toggle
-- **Responsive Design**: Mobile-first approach with Tailwind CSS
-- **Smooth Animations**: Framer Motion animations and transitions
-- **Interactive Components**: Modern UI with hover effects and micro-interactions
-- **TypeScript**: Full type safety throughout the application
-- **Performance Optimized**: Vite build system for fast development and production builds
+- 🎨 Modern ve minimal tasarım
+- 🌓 Aydınlık/karanlık tema desteği
+- 🌍 Çoklu dil desteği (Türkçe/İngilizce)
+- 📱 Tam duyarlı (responsive) tasarım
+## 🛠️ Teknolojiler
 
-## 🚀 Quick Start
+- [React](https://reactjs.org/) - UI kütüphanesi
+- [TypeScript](https://www.typescriptlang.org/) - Tip güvenli JavaScript
+- [Vite](https://vitejs.dev/) - Build aracı
+- [Tailwind CSS](https://tailwindcss.com/) - Utility-first CSS framework
+- [Framer Motion](https://www.framer.com/motion/) - Animasyon kütüphanesi
+- [Lucide Icons](https://lucide.dev/) - İkon kütüphanesi
+- [EmailJS](https://www.emailjs.com/) - Email servisi
+
+## 🚀 Başlangıç
 
 ### Prerequisites
 - Node.js (v18 or higher)
