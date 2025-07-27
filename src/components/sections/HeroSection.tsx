@@ -35,12 +35,13 @@ export const HeroSection: React.FC = () => {
             <div className="relative">
               <div className="absolute inset-0 bg-gradient-to-r from-primary-blue to-primary-turquoise rounded-full blur-2xl opacity-40 animate-pulse scale-110" />
               <div className="relative p-2 rounded-full">
-                <img 
+                                <motion.img
                   src={isDark ? "/logo_light.svg" : "/logo_dark.svg"}
-                  alt="Emfinity Interactive" 
-                  className="h-48 w-48 sm:h-56 sm:w-56 md:h-64 md:w-64 lg:h-72 lg:w-72 xl:h-80 xl:w-80 object-contain transition-all duration-500"
-                  onLoad={() => console.log('Hero logo loaded:', isDark ? "/logo_light.svg" : "/logo_dark.svg", 'isDark:', isDark)}
-                  onError={() => console.log('Hero logo failed to load:', isDark ? "/logo_light.svg" : "/logo_dark.svg")}
+                  alt="Emfinity Logo"
+                  className="w-64 h-64 mb-8 object-contain"
+                  initial={{ scale: 0.8, opacity: 0 }}
+                  animate={{ scale: 1, opacity: 1 }}
+                  transition={{ duration: 0.5 }}
                 />
               </div>
             </div>
