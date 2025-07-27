@@ -5,7 +5,6 @@ import {
   Linkedin, 
   Twitter, 
   Mail, 
-  Phone, 
   MapPin,
   ExternalLink,
   Heart 
@@ -66,7 +65,7 @@ export const Footer: React.FC = () => {
   };
 
   return (
-    <footer className="bg-gray-50 dark:bg-slate-900 border-t border-gray-200 dark:border-gray-800">
+    <div className="bg-gray-50 dark:bg-slate-900 border-t border-gray-200 dark:border-gray-800">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
         {/* Main Footer Content */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-8">
@@ -198,8 +197,7 @@ export const Footer: React.FC = () => {
                   </div>
                   <button className="px-6 py-3 rounded-lg bg-primary-blue text-white font-semibold hover:bg-primary-turquoise transition-colors duration-300 w-fit">
                     {t.contact.ctaButton}
-                    </button>
-                  </div>
+                  </button>
                 </div>
               </div>
             </motion.div>
@@ -236,6 +234,6 @@ export const Footer: React.FC = () => {
           </div>
         </motion.div>
       </div>
-    </footer>
+    </div>
   );
-};
+}

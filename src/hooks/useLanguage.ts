@@ -14,7 +14,7 @@ const translations = {
       title: 'Just getting started.',
       subtitle: "We're a creative software studio crafting innovative digital experiences that push the boundaries of what's possible.",
       viewWork: 'View Our Work',
-      getInTouch: 'Get In Touch',
+      getInTouch: 'Start a Project',
     },
     about: {
       title: 'About Us',
@@ -134,7 +134,7 @@ const translations = {
       title: 'Yeni başlıyoruz.',
       subtitle: "Mümkün olanın sınırlarını zorlayan yenilikçi dijital deneyimler yaratan kreatif bir yazılım stüdyosuyuz.",
       viewWork: 'Çalışmalarımızı Gör',
-      getInTouch: 'İletişime Geç',
+      getInTouch: 'Projeye Başla',
     },
     about: {
       title: 'Hakkımızda',
