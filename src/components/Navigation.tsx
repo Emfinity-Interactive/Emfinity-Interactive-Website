@@ -70,8 +70,10 @@ export const Navigation: React.FC<NavigationProps> = ({ isDark, onThemeToggle })
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-16">
           {/* Logo */}
-          <motion.div
+          <motion.button
+            onClick={() => scrollToSection('#home')}
             whileHover={{ scale: 1.05 }}
+            whileTap={{ scale: 0.95 }}
             className="flex items-center space-x-3"
           >
             <img 
@@ -83,7 +85,7 @@ export const Navigation: React.FC<NavigationProps> = ({ isDark, onThemeToggle })
             <span className="text-xl font-bold bg-gradient-to-r from-primary-blue to-primary-turquoise bg-clip-text text-transparent">
               Emfinity Interactive
             </span>
-          </motion.div>
+          </motion.button>
 
           {/* Desktop Navigation */}
           <div className="hidden md:flex items-center space-x-6">
