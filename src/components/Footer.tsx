@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import { motion } from 'framer-motion';
 import { 
   Github, 
@@ -57,13 +57,6 @@ const services = [
 export const Footer: React.FC = () => {
   const { t } = useLanguage();
   const { isDark } = useTheme();
-  const [logoSrc, setLogoSrc] = useState(isDark ? '/logo_light.svg' : '/logo_dark.svg');
-
-  useEffect(() => {
-    const newLogoSrc = isDark ? '/logo_light.svg' : '/logo_dark.svg';
-    console.log('Footer: Theme changed, isDark:', isDark, 'newLogoSrc:', newLogoSrc);
-    setLogoSrc(newLogoSrc);
-  }, [isDark]);
 
   const scrollToSection = (href: string) => {
     const element = document.querySelector(href);
@@ -88,8 +81,8 @@ export const Footer: React.FC = () => {
             >
               <div className="flex items-center space-x-3 mb-4">
                 <img 
-                  key={`footer-logo-${isDark ? 'dark' : 'light'}`}
-                  src={logoSrc}
+                  key={isDark ? 'footer-dark-theme' : 'footer-light-theme'}
+                  src={isDark ? '/logo_light.svg' : '/logo_dark.svg'}
                   alt="Emfinity Interactive" 
                   className="h-10 w-10 object-contain transition-opacity duration-300"
                 />

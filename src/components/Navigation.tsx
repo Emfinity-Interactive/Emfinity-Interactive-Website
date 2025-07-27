@@ -14,15 +14,7 @@ export const Navigation: React.FC<NavigationProps> = ({ isDark, onThemeToggle })
   const [isOpen, setIsOpen] = useState(false);
   const [activeSection, setActiveSection] = useState('home');
   const [scrolled, setScrolled] = useState(false);
-  const [logoSrc, setLogoSrc] = useState(isDark ? "/logo_light.svg" : "/logo_dark.svg");
   const { t } = useLanguage();
-
-  // Logo src'ini theme değişikliğinde güncelle
-  useEffect(() => {
-    const newLogoSrc = isDark ? "/logo_light.svg" : "/logo_dark.svg";
-    console.log('Navigation: Theme changed, isDark:', isDark, 'newLogoSrc:', newLogoSrc);
-    setLogoSrc(newLogoSrc);
-  }, [isDark]);
 
   // Dynamic nav items based on language
   const navItems: NavItem[] = [
@@ -82,8 +74,8 @@ export const Navigation: React.FC<NavigationProps> = ({ isDark, onThemeToggle })
             className="flex items-center space-x-3"
           >
             <img 
-              key={`nav-logo-${isDark ? 'dark' : 'light'}`}
-              src={logoSrc}
+              key={isDark ? 'nav-dark-theme' : 'nav-light-theme'}
+              src={isDark ? "/logo_light.svg" : "/logo_dark.svg"}
               alt="Emfinity Interactive" 
               className="h-14 w-14 object-contain transition-all duration-500"
             />
