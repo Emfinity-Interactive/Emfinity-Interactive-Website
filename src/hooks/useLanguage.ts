@@ -10,6 +10,14 @@ const translations = {
       projects: 'Projects',
       contact: 'Contact',
     },
+    location: {
+      title: 'Our Location',
+      description: 'Visit us at our office',
+      address: 'Office Address',
+      fullAddress: 'Emfinity Interactive, Ankara, Turkey',
+      officeHours: 'Office Hours',
+      workingHours: 'Monday - Friday: 9:00 AM - 6:00 PM',
+    },
     hero: {
       title: 'Just getting started.',
       subtitle: "We're a creative software studio crafting innovative digital experiences that push the boundaries of what's possible.",
@@ -105,6 +113,9 @@ const translations = {
         uiDesign: 'UI/UX Design',
         consulting: 'Tech Consulting',
       },
+      location: {
+        title: 'Our Location',
+      },
       contact: {
         title: 'Contact Info',
         email: 'hello@emfinity.com',
@@ -122,6 +133,14 @@ const translations = {
     },
   },
   tr: {
+    location: {
+      title: 'Konumumuz',
+      description: 'Ofisimizi ziyaret edin',
+      address: 'Ofis Adresi',
+      fullAddress: 'Emfinity Interactive, Ankara, Türkiye',
+      officeHours: 'Çalışma Saatleri',
+      workingHours: 'Pazartesi - Cuma: 09:00 - 18:00',
+    },
     navigation: {
       home: 'Ana Sayfa',
       about: 'Hakkımızda',
@@ -222,6 +241,9 @@ const translations = {
         mobileDev: 'Mobil Uygulamalar',
         uiDesign: 'UI/UX Tasarım',
         consulting: 'Teknoloji Danışmanlığı',
+      },
+      location: {
+        title: 'Konumumuz',
       },
       contact: {
         title: 'İletişim Bilgileri',

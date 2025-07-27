@@ -1,15 +1,23 @@
 import React, { useState, useRef } from 'react';
 import { motion } from 'framer-motion';
-import { Github, Linkedin, Mail, MapPin, Send, CheckCircle, AlertCircle } from 'lucide-react';
+import { Github, Linkedin, Mail, Send, CheckCircle, AlertCircle, Phone } from 'lucide-react';
 import { useLanguage } from '../../hooks/useLanguage';
 import emailjs from '@emailjs/browser';
 
 const socialLinks = [
   {
-    icon: Github,
-    label: 'github',
-    href: 'https://github.com/Emfinity-Interactive',
-    color: 'group-hover:text-gray-900 dark:group-hover:text-white'
+    icon: Phone,
+    label: 'phone',
+    href: 'tel:+905555555555',
+    displayText: '+90 555 555 5555',
+    color: 'group-hover:text-green-600'
+  },
+  {
+    icon: Mail,
+    label: 'email',
+    href: 'mailto:emfinity.interactive@gmail.com',
+    displayText: 'emfinity.interactive@gmail.com',
+    color: 'group-hover:text-red-500'
   },
   {
     icon: Linkedin,
@@ -18,10 +26,10 @@ const socialLinks = [
     color: 'group-hover:text-blue-600'
   },
   {
-    icon: Mail,
-    label: 'email',
-    href: 'mailto:hello@emfinity.com',
-    color: 'group-hover:text-red-500'
+    icon: Github,
+    label: 'github',
+    href: 'https://github.com/Emfinity-Interactive',
+    color: 'group-hover:text-gray-900 dark:group-hover:text-white'
   }
 ];
 
@@ -213,7 +221,7 @@ export const ContactSection: React.FC = () => {
                   </div>
                   <div>
                     <h3 className="text-lg font-semibold text-gray-900 dark:text-gray-100">
-                      {t.contact.social[link.label as keyof typeof t.contact.social]}
+                      {link.label === 'phone' || link.label === 'email' ? link.displayText : t.contact.social[link.label as keyof typeof t.contact.social]}
                     </h3>
                     <p className="text-gray-600 dark:text-gray-400 text-sm">
                       {t.contact.social.connectWith}
@@ -225,19 +233,7 @@ export const ContactSection: React.FC = () => {
           </motion.div>
         </div>
 
-        {/* Location Info */}
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.8, delay: 0.4 }}
-          className="text-center"
-        >
-          <div className="inline-flex items-center space-x-2 text-gray-600 dark:text-gray-400">
-            <MapPin className="w-5 h-5" />
-            <span>{t.contact.location}</span>
-          </div>
-        </motion.div>
+
       </div>
     </section>
   );

@@ -68,10 +68,10 @@ export const Footer: React.FC = () => {
     <footer className="w-full min-w-[320px] bg-gray-50 dark:bg-slate-900 border-t border-gray-200 dark:border-gray-800">
       <div className="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-12">
         {/* Main Footer Content */}
-        <div className="w-full grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8 lg:gap-12 mb-8">
+        <div className="w-full grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-12 gap-6 sm:gap-8 lg:gap-12 mb-8">
           
           {/* Company Info */}
-          <div className="lg:col-span-1">
+          <div className="lg:col-span-3 sm:col-span-2">
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -118,7 +118,7 @@ export const Footer: React.FC = () => {
           </div>
 
           {/* Quick Links */}
-          <div>
+          <div className="lg:col-span-3">
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -145,7 +145,7 @@ export const Footer: React.FC = () => {
           </div>
 
           {/* Services */}
-          <div>
+          <div className="lg:col-span-3">
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -168,7 +168,7 @@ export const Footer: React.FC = () => {
           </div>
 
           {/* Location Info */}
-          <div>
+          <div className="lg:col-span-3">
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -176,12 +176,27 @@ export const Footer: React.FC = () => {
               transition={{ duration: 0.6, delay: 0.3 }}
             >
               <h3 className="text-lg font-semibold text-gray-900 dark:text-gray-100 mb-4">
-                Location
+                {t.footer.location.title}
               </h3>
-              <div className="bg-gray-100 dark:bg-slate-800 rounded-lg p-3 sm:p-4">
-                <div className="flex items-center space-x-3 text-gray-600 dark:text-gray-400">
-                  <MapPin className="w-4 h-4 sm:w-5 sm:h-5 text-primary-blue flex-shrink-0" />
-                  <span className="text-sm sm:text-base">{t.footer.contact.address}</span>
+              <div className="space-y-4">
+                <div className="flex items-center space-x-3 text-gray-600 dark:text-gray-400 mb-4">
+                  <div className="p-2 bg-gradient-to-br from-primary-blue/10 to-primary-turquoise/10 rounded-lg">
+                    <MapPin className="w-5 h-5 text-primary-blue" />
+                  </div>
+                  <span className="text-sm sm:text-base">Ankara, Türkiye</span>
+                </div>
+                <div className="w-full h-[150px] rounded-lg overflow-hidden shadow-md hover:shadow-lg transition-all duration-300">
+                  <iframe
+                    title="Emfinity Interactive Location"
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d195800.85797771872!2d32.62259443273921!3d39.90329227941608!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14d347d520732db1%3A0xbdc57b0c0842b8d!2sAnkara%2C%20T%C3%BCrkiye!5e0!3m2!1str!2str!4v1690456789012!5m2!1str!2str"
+                    width="100%"
+                    height="100%"
+                    style={{ border: 0 }}
+                    allowFullScreen
+                    loading="lazy"
+                    referrerPolicy="no-referrer-when-downgrade"
+                    className="rounded-lg"
+                  />
                 </div>
               </div>
             </motion.div>
