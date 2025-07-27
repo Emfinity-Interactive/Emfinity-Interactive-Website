@@ -32,16 +32,26 @@ export const HeroSection: React.FC = () => {
             transition={{ duration: 0.8, delay: 0.2 }}
             className="flex justify-center mb-8"
           >
-            <div className="relative">
-              <div className="absolute inset-0 bg-gradient-to-r from-primary-blue to-primary-turquoise rounded-full blur-2xl opacity-40 animate-pulse scale-110" />
+            <div className="relative group cursor-pointer">
+              <motion.div 
+                className="absolute inset-0 bg-gradient-to-r from-primary-blue to-primary-turquoise rounded-full blur-2xl opacity-40 animate-pulse scale-110"
+                whileHover={{ scale: 1.3, opacity: 0.6 }}
+                transition={{ duration: 0.3 }}
+              />
               <div className="relative p-2 rounded-full">
-                                <motion.img
+                <motion.img
                   src={isDark ? "/logo_light.svg" : "/logo_dark.svg"}
                   alt="Emfinity Logo"
-                  className="w-64 h-64 mb-8 object-contain"
+                  className="w-64 h-64 mb-8 object-contain filter drop-shadow-2xl"
                   initial={{ scale: 0.8, opacity: 0 }}
                   animate={{ scale: 1, opacity: 1 }}
                   transition={{ duration: 0.5 }}
+                  whileHover={{ 
+                    scale: 1.1, 
+                    rotate: [0, -5, 5, 0],
+                    filter: "brightness(1.2) drop-shadow(0 0 20px rgba(34, 211, 238, 0.5))"
+                  }}
+                  whileTap={{ scale: 0.95 }}
                 />
               </div>
             </div>
