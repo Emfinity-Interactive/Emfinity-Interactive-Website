@@ -134,10 +134,10 @@ export const Footer: React.FC = () => {
                   <li key={link.label}>
                     <button
                       onClick={() => scrollToSection(link.href)}
-                      className="text-gray-600 dark:text-gray-400 hover:text-primary-blue dark:hover:text-primary-turquoise transition-colors duration-300 flex items-center group relative"
+                      className="text-gray-600 dark:text-gray-400 hover:text-primary-blue dark:hover:text-primary-turquoise transition-colors duration-300 flex items-center group"
                     >
                       {t.footer.quickLinks[link.label as keyof typeof t.footer.quickLinks]}
-                      <ExternalLink className="w-3 h-3 ml-1 opacity-0 group-hover:opacity-100 transition-all duration-300 transform translate-x-[-10px] group-hover:translate-x-0" />
+                      <ExternalLink className="w-3 h-3 ml-1 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
                     </button>
                   </li>
                 ))}
