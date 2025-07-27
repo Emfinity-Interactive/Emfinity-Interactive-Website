@@ -179,27 +179,25 @@ export const Footer: React.FC = () => {
               <h3 className="text-lg font-semibold text-gray-900 dark:text-gray-100 mb-4">
                 {t.footer.contact.title}
               </h3>
-              <div className="space-y-8">
-                {/* Location and CTA sections */}
-                <div className="flex flex-col gap-12">
-                  {/* Location */}
-                  <div className="bg-gray-100 dark:bg-slate-800 rounded-lg p-6">
-                    <div className="flex items-center space-x-3 text-gray-600 dark:text-gray-400">
-                      <MapPin className="w-5 h-5 text-primary-blue" />
-                      <span className="text-base">{t.footer.contact.address}</span>
-                    </div>
+              <div className="flex flex-col space-y-8">
+                {/* Location - Üstte */}
+                <div className="bg-gray-100 dark:bg-slate-800 rounded-lg p-4">
+                  <div className="flex items-center space-x-3 text-gray-600 dark:text-gray-400">
+                    <MapPin className="w-5 h-5 text-primary-blue" />
+                    <span className="text-base font-medium">{t.footer.contact.address}</span>
                   </div>
+                </div>
 
-                  {/* CTA Section */}
-                  <div className="bg-gray-100 dark:bg-slate-800 rounded-lg p-8 flex flex-col gap-6">
-                    <div className="text-xl font-semibold text-gray-900 dark:text-gray-100">
-                      {t.contact.ctaTitle}
-                    </div>
-                    <div className="text-base text-gray-600 dark:text-gray-400">
-                      {t.contact.ctaDescription}
-                    </div>
-                    <button className="px-8 py-4 rounded-lg bg-primary-blue text-white font-semibold hover:bg-primary-turquoise transition-colors duration-300 w-fit">
-                      {t.contact.ctaButton}
+                {/* CTA Section - Altta */}
+                <div className="bg-gray-100 dark:bg-slate-800 rounded-lg p-6 flex flex-col gap-4">
+                  <div className="text-lg font-semibold text-gray-900 dark:text-gray-100">
+                    {t.contact.ctaTitle}
+                  </div>
+                  <div className="text-base text-gray-600 dark:text-gray-400">
+                    {t.contact.ctaDescription}
+                  </div>
+                  <button className="px-6 py-3 rounded-lg bg-primary-blue text-white font-semibold hover:bg-primary-turquoise transition-colors duration-300 w-fit">
+                    {t.contact.ctaButton}
                     </button>
                   </div>
                 </div>
