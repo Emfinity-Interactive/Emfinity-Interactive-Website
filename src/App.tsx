@@ -12,7 +12,7 @@ function App() {
 
   return (
     <LanguageProvider>
-      <div className="min-h-screen bg-background-light dark:bg-background-dark transition-colors duration-300">
+      <div className="min-h-screen w-full min-w-[320px] overflow-x-hidden bg-background-light dark:bg-background-dark transition-colors duration-300">
         <Navigation isDark={isDark} onThemeToggle={toggleTheme} />
         <main>
           <HeroSection />

@@ -65,10 +65,10 @@ export const Footer: React.FC = () => {
   };
 
   return (
-    <footer className="bg-gray-50 dark:bg-slate-900 border-t border-gray-200 dark:border-gray-800">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-12">
+    <footer className="w-full min-w-[320px] bg-gray-50 dark:bg-slate-900 border-t border-gray-200 dark:border-gray-800">
+      <div className="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-12">
         {/* Main Footer Content */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-12 mb-8">
+        <div className="w-full grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8 lg:gap-12 mb-8">
           
           {/* Company Info */}
           <div className="lg:col-span-1">
@@ -214,18 +214,18 @@ export const Footer: React.FC = () => {
           transition={{ duration: 0.6, delay: 0.4 }}
           className="pt-8 border-t border-gray-200 dark:border-gray-800"
         >
-          <div className="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
-            <div className="flex items-center space-x-2 text-gray-600 dark:text-gray-400 text-sm">
+          <div className="w-full flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
+            <div className="w-full md:w-auto flex flex-col md:flex-row items-center md:items-start space-y-2 md:space-y-0 md:space-x-2 text-gray-600 dark:text-gray-400 text-sm text-center md:text-left">
               <span>{t.footer.bottom.copyright}</span>
               <span className="hidden md:inline">•</span>
-              <span className="flex items-center space-x-1">
+              <span className="flex items-center justify-center space-x-1">
                 <span>Made with</span>
                 <Heart className="w-4 h-4 text-red-500 fill-current" />
                 <span>in Ankara</span>
               </span>
             </div>
             
-            <div className="flex items-center space-x-6 text-sm">
+            <div className="w-full md:w-auto flex items-center justify-center md:justify-end space-x-4 sm:space-x-6 text-sm">
               <button className="text-gray-600 dark:text-gray-400 hover:text-primary-blue dark:hover:text-primary-turquoise transition-colors duration-300">
                 {t.footer.bottom.privacy}
               </button>
