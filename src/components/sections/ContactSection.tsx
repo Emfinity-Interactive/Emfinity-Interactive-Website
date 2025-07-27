@@ -95,7 +95,7 @@ export const ContactSection: React.FC = () => {
             transition={{ duration: 0.8 }}
             className="bg-white/70 dark:bg-slate-900/70 backdrop-blur-sm rounded-2xl p-8 shadow-lg border border-gray-200/50 dark:border-gray-700/50"
           >
-            <h3 className="text-2xl font-bold mb-6 text-gray-900 dark:text-gray-100">
+            <h3 className="text-2xl font-bold mb-6 bg-gradient-to-r from-primary-blue to-primary-turquoise bg-clip-text text-transparent">
               {t.contact.send}
             </h3>
             <form ref={formRef} onSubmit={handleSubmit} className="space-y-6">
@@ -233,29 +233,10 @@ export const ContactSection: React.FC = () => {
           transition={{ duration: 0.8, delay: 0.4 }}
           className="text-center"
         >
-          <div className="inline-flex items-center space-x-2 text-gray-600 dark:text-gray-400 mb-8">
+          <div className="inline-flex items-center space-x-2 text-gray-600 dark:text-gray-400">
             <MapPin className="w-5 h-5" />
             <span>{t.contact.location}</span>
           </div>
-          
-          <motion.div
-            whileHover={{ scale: 1.05 }}
-            className="inline-block"
-          >
-            <div className="bg-gradient-to-r from-primary-blue to-primary-turquoise p-8 rounded-2xl text-white shadow-xl">
-              <h3 className="text-2xl font-bold mb-4">{t.contact.ctaTitle}</h3>
-              <p className="text-blue-100 mb-6">
-                {t.contact.ctaDescription}
-              </p>
-              <motion.button
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
-                className="px-6 py-3 bg-white text-primary-blue font-semibold rounded-full hover:bg-gray-100 transition-colors duration-300"
-              >
-                {t.contact.ctaButton}
-              </motion.button>
-            </div>
-          </motion.div>
         </motion.div>
       </div>
     </section>

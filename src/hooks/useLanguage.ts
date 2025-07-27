@@ -78,9 +78,7 @@ const translations = {
       message: 'Message',
       send: 'Send Message',
       location: 'Based in Ankara, Turkey',
-      ctaTitle: 'Ready to Start Your Project?',
-      ctaDescription: 'Let\'s create something amazing together.',
-      ctaButton: 'Start a Conversation',
+
       social: {
         connectWith: 'Connect with us via',
         github: 'GitHub',
@@ -198,9 +196,7 @@ const translations = {
       message: 'Mesaj',
       send: 'Mesaj Gönder',
       location: 'Ankara, Türkiye merkezli',
-      ctaTitle: 'Projenizi Başlatmaya Hazır mısınız?',
-      ctaDescription: 'Birlikte harika bir şey yaratalım.',
-      ctaButton: 'Sohbete Başla',
+
       social: {
         connectWith: 'Bizimle iletişim kurun',
         github: 'GitHub',

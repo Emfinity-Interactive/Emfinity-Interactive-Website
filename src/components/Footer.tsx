@@ -68,7 +68,7 @@ export const Footer: React.FC = () => {
     <footer className="w-full min-w-[320px] bg-gray-50 dark:bg-slate-900 border-t border-gray-200 dark:border-gray-800">
       <div className="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-12">
         {/* Main Footer Content */}
-        <div className="w-full grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8 lg:gap-12 mb-8">
+        <div className="w-full grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8 lg:gap-12 mb-8">
           
           {/* Company Info */}
           <div className="lg:col-span-1">
@@ -167,7 +167,7 @@ export const Footer: React.FC = () => {
             </motion.div>
           </div>
 
-          {/* Contact Info */}
+          {/* Location Info */}
           <div>
             <motion.div
               initial={{ opacity: 0, y: 20 }}
@@ -176,30 +176,12 @@ export const Footer: React.FC = () => {
               transition={{ duration: 0.6, delay: 0.3 }}
             >
               <h3 className="text-lg font-semibold text-gray-900 dark:text-gray-100 mb-4">
-                {t.footer.contact.title}
+                Location
               </h3>
-              <div className="flex flex-col space-y-8">
-                {/* Location - Üstte */}
-                <div className="bg-gray-100 dark:bg-slate-800 rounded-lg p-3 sm:p-4">
-                  <div className="flex items-center space-x-3 text-gray-600 dark:text-gray-400">
-                    <MapPin className="w-4 h-4 sm:w-5 sm:h-5 text-primary-blue flex-shrink-0" />
-                    <span className="text-sm sm:text-base font-medium">{t.footer.contact.address}</span>
-                  </div>
-                </div>
-
-                {/* CTA Section - Altta */}
-                <div className="bg-gray-100 dark:bg-slate-800 rounded-lg p-4 sm:p-6">
-                  <div className="flex flex-col gap-3 sm:gap-4">
-                    <div className="text-base sm:text-lg font-semibold text-gray-900 dark:text-gray-100">
-                      {t.contact.ctaTitle}
-                    </div>
-                    <div className="text-sm sm:text-base text-gray-600 dark:text-gray-400">
-                      {t.contact.ctaDescription}
-                    </div>
-                    <button className="px-4 sm:px-6 py-2 sm:py-3 rounded-lg bg-primary-blue text-white font-semibold hover:bg-primary-turquoise transition-all duration-300 w-fit text-sm sm:text-base hover:scale-105">
-                      {t.contact.ctaButton}
-                    </button>
-                  </div>
+              <div className="bg-gray-100 dark:bg-slate-800 rounded-lg p-3 sm:p-4">
+                <div className="flex items-center space-x-3 text-gray-600 dark:text-gray-400">
+                  <MapPin className="w-4 h-4 sm:w-5 sm:h-5 text-primary-blue flex-shrink-0" />
+                  <span className="text-sm sm:text-base">{t.footer.contact.address}</span>
                 </div>
               </div>
             </motion.div>
