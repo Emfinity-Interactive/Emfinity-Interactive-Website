@@ -7,13 +7,13 @@ const contactLinks = [
   {
     icon: Github,
     label: 'GitHub',
-    href: 'https://github.com',
+    href: 'https://github.com/Emfinity-Interactive',
     color: 'hover:text-gray-900 dark:hover:text-white'
   },
   {
     icon: Linkedin,
     label: 'LinkedIn',
-    href: 'https://linkedin.com',
+    href: 'https://linkedin.com/company/emfinity-interactive',
     color: 'hover:text-blue-600'
   },
   {

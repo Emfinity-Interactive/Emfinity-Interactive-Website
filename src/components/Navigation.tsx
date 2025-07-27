@@ -14,7 +14,15 @@ export const Navigation: React.FC<NavigationProps> = ({ isDark, onThemeToggle })
   const [isOpen, setIsOpen] = useState(false);
   const [activeSection, setActiveSection] = useState('home');
   const [scrolled, setScrolled] = useState(false);
+  const [logoSrc, setLogoSrc] = useState(isDark ? "/logo_light.svg" : "/logo_dark.svg");
   const { t } = useLanguage();
+
+  // Logo src'ini theme değişikliğinde güncelle
+  useEffect(() => {
+    const newLogoSrc = isDark ? "/logo_light.svg" : "/logo_dark.svg";
+    console.log('Navigation: Theme changed, isDark:', isDark, 'newLogoSrc:', newLogoSrc);
+    setLogoSrc(newLogoSrc);
+  }, [isDark]);
 
   // Dynamic nav items based on language
   const navItems: NavItem[] = [
@@ -74,10 +82,10 @@ export const Navigation: React.FC<NavigationProps> = ({ isDark, onThemeToggle })
             className="flex items-center space-x-3"
           >
             <img 
-              key={isDark ? 'dark-logo' : 'light-logo'}
-              src={isDark ? "/logo_light.svg" : "/logo_dark.svg"}
+              key={`nav-logo-${isDark ? 'dark' : 'light'}`}
+              src={logoSrc}
               alt="Emfinity Interactive" 
-              className="h-14 w-14 object-contain transition-opacity duration-300"
+              className="h-14 w-14 object-contain transition-all duration-500"
             />
             <span className="text-xl font-bold bg-gradient-to-r from-primary-blue to-primary-turquoise bg-clip-text text-transparent">
               Emfinity Interactive

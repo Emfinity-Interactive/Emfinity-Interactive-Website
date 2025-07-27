@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import { ChevronDown } from 'lucide-react';
 import { AnimatedBackground } from '../AnimatedBackground';
@@ -8,6 +8,17 @@ import { useTheme } from '../../hooks/useTheme';
 export const HeroSection: React.FC = () => {
   const { t } = useLanguage();
   const { isDark } = useTheme();
+  const [logoSrc, setLogoSrc] = useState(isDark ? "/logo_light.svg" : "/logo_dark.svg");
+
+  // Logo src'ini theme değişikliğinde güncelle
+  useEffect(() => {
+    const newLogoSrc = isDark ? "/logo_light.svg" : "/logo_dark.svg";
+    console.log('HeroSection: Theme changed, isDark:', isDark, 'newLogoSrc:', newLogoSrc);
+    // Force re-render with a slight delay to ensure theme change is processed
+    setTimeout(() => {
+      setLogoSrc(newLogoSrc);
+    }, 50);
+  }, [isDark]);
   
   const scrollToAbout = () => {
     document.getElementById('about')?.scrollIntoView({ behavior: 'smooth' });
@@ -35,10 +46,12 @@ export const HeroSection: React.FC = () => {
               <div className="absolute inset-0 bg-gradient-to-r from-primary-blue to-primary-turquoise rounded-full blur-2xl opacity-40 animate-pulse scale-110" />
               <div className="relative p-2 rounded-full">
                 <img 
-                  key={isDark ? 'dark-logo' : 'light-logo'}
-                  src={isDark ? "/logo_light.svg" : "/logo_dark.svg"}
+                  key={`hero-logo-${isDark ? 'dark' : 'light'}-${Date.now()}`}
+                  src={`${logoSrc}?t=${Date.now()}`}
                   alt="Emfinity Interactive" 
-                  className="h-48 w-48 sm:h-56 sm:w-56 md:h-64 md:w-64 lg:h-72 lg:w-72 xl:h-80 xl:w-80 object-contain transition-opacity duration-300"
+                  className="h-48 w-48 sm:h-56 sm:w-56 md:h-64 md:w-64 lg:h-72 lg:w-72 xl:h-80 xl:w-80 object-contain transition-all duration-500"
+                  onLoad={() => console.log('Hero logo loaded:', logoSrc, 'isDark:', isDark)}
+                  onError={() => console.log('Hero logo failed to load:', logoSrc)}
                 />
               </div>
             </div>

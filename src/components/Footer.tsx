@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import { 
   Github, 
@@ -57,6 +57,13 @@ const services = [
 export const Footer: React.FC = () => {
   const { t } = useLanguage();
   const { isDark } = useTheme();
+  const [logoSrc, setLogoSrc] = useState(isDark ? '/logo_light.svg' : '/logo_dark.svg');
+
+  useEffect(() => {
+    const newLogoSrc = isDark ? '/logo_light.svg' : '/logo_dark.svg';
+    console.log('Footer: Theme changed, isDark:', isDark, 'newLogoSrc:', newLogoSrc);
+    setLogoSrc(newLogoSrc);
+  }, [isDark]);
 
   const scrollToSection = (href: string) => {
     const element = document.querySelector(href);
@@ -81,8 +88,8 @@ export const Footer: React.FC = () => {
             >
               <div className="flex items-center space-x-3 mb-4">
                 <img 
-                  key={isDark ? 'dark-logo' : 'light-logo'}
-                  src={isDark ? "/logo_light.svg" : "/logo_dark.svg"}
+                  key={`footer-logo-${isDark ? 'dark' : 'light'}`}
+                  src={logoSrc}
                   alt="Emfinity Interactive" 
                   className="h-10 w-10 object-contain transition-opacity duration-300"
                 />
@@ -105,6 +112,11 @@ export const Footer: React.FC = () => {
                     whileHover={{ scale: 1.1, y: -2 }}
                     whileTap={{ scale: 0.95 }}
                     className={`p-2 rounded-lg bg-gray-100 dark:bg-slate-800 text-gray-600 dark:text-gray-400 transition-colors duration-300 ${social.color}`}
+                    style={{ pointerEvents: 'auto' }}
+                    onClick={(e) => {
+                      e.stopPropagation();
+                      window.open(social.href, '_blank', 'noopener,noreferrer');
+                    }}
                   >
                     <social.icon className="w-5 h-5" />
                   </motion.a>
