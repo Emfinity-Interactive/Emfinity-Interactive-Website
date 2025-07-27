@@ -3,31 +3,31 @@ import { motion } from 'framer-motion';
 import { Code, Palette, Zap, Users } from 'lucide-react';
 import { useLanguage } from '../../hooks/useLanguage';
 
-const skills = [
-  {
-    icon: Code,
-    title: "Full-Stack Development",
-    description: "Building robust applications with modern technologies and best practices."
-  },
-  {
-    icon: Palette,
-    title: "UI/UX Design",
-    description: "Creating beautiful, intuitive interfaces that users love to interact with."
-  },
-  {
-    icon: Zap,
-    title: "Performance Optimization",
-    description: "Ensuring lightning-fast experiences across all devices and platforms."
-  },
-  {
-    icon: Users,
-    title: "Team Collaboration",
-    description: "Working seamlessly with teams to deliver exceptional results."
-  }
-];
-
 export const AboutSection: React.FC = () => {
   const { t } = useLanguage();
+  
+  const skills = [
+    {
+      icon: Code,
+      title: t.about.skills.fullStack.title,
+      description: t.about.skills.fullStack.description
+    },
+    {
+      icon: Palette,
+      title: t.about.skills.uiux.title,
+      description: t.about.skills.uiux.description
+    },
+    {
+      icon: Zap,
+      title: t.about.skills.performance.title,
+      description: t.about.skills.performance.description
+    },
+    {
+      icon: Users,
+      title: t.about.skills.collaboration.title,
+      description: t.about.skills.collaboration.description
+    }
+  ];
   
   return (
     <section id="about" className="py-20 px-4 sm:px-6 lg:px-8 bg-gray-50 dark:bg-slate-800/50">
@@ -52,7 +52,7 @@ export const AboutSection: React.FC = () => {
               transition={{ duration: 0.8, delay: 0.2 }}
               className="text-2xl sm:text-3xl text-gray-700 dark:text-gray-300 mb-8 leading-relaxed"
             >
-              Hi, I'm Emre. I build things for fun, and for the future.
+              {t.about.intro}
             </motion.p>
             <motion.p
               initial={{ opacity: 0, y: 30 }}
@@ -61,10 +61,7 @@ export const AboutSection: React.FC = () => {
               transition={{ duration: 0.8, delay: 0.4 }}
               className="text-lg text-gray-600 dark:text-gray-400 leading-relaxed"
             >
-              At Emfinity Interactive, we're passionate about creating digital experiences that matter. 
-              Our team combines technical expertise with creative vision to build software that not only 
-              works flawlessly but also inspires and delights users. From concept to deployment, we're 
-              committed to pushing the boundaries of what's possible in the digital realm.
+              {t.about.description}
             </motion.p>
           </div>
         </motion.div>

@@ -3,24 +3,24 @@ import { motion } from 'framer-motion';
 import { Github, Linkedin, Mail, MapPin } from 'lucide-react';
 import { useLanguage } from '../../hooks/useLanguage';
 
-const contactLinks = [
+const socialLinks = [
   {
     icon: Github,
-    label: 'GitHub',
+    label: 'github',
     href: 'https://github.com/Emfinity-Interactive',
-    color: 'hover:text-gray-900 dark:hover:text-white'
+    color: 'group-hover:text-gray-900 dark:group-hover:text-white'
   },
   {
     icon: Linkedin,
-    label: 'LinkedIn',
+    label: 'linkedin',
     href: 'https://linkedin.com/company/emfinity-interactive',
-    color: 'hover:text-blue-600'
+    color: 'group-hover:text-blue-600'
   },
   {
     icon: Mail,
-    label: 'Email',
+    label: 'email',
     href: 'mailto:hello@emfinity.com',
-    color: 'hover:text-red-500'
+    color: 'group-hover:text-red-500'
   }
 ];
 
@@ -49,7 +49,7 @@ export const ContactSection: React.FC = () => {
 
         {/* Contact Cards */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12">
-          {contactLinks.map((link, index) => (
+          {socialLinks.map((link, index) => (
             <motion.a
               key={link.label}
               href={link.href}
@@ -69,10 +69,10 @@ export const ContactSection: React.FC = () => {
                   </div>
                 </div>
                 <h3 className="text-xl font-semibold text-gray-900 dark:text-gray-100 mb-2">
-                  {link.label}
+                  {t.contact.social[link.label as keyof typeof t.contact.social]}
                 </h3>
                 <p className="text-gray-600 dark:text-gray-400">
-                  Connect with us on {link.label}
+                  {t.contact.social.connectWith} {t.contact.social[link.label as keyof typeof t.contact.social]}
                 </p>
               </div>
             </motion.a>

@@ -17,25 +17,25 @@ const socialLinks = [
   {
     icon: Github,
     href: 'https://github.com/Emfinity-Interactive',
-    label: 'GitHub',
+    label: 'github',
     color: 'hover:text-gray-900 dark:hover:text-white'
   },
   {
     icon: Linkedin,
     href: 'https://linkedin.com/company/emfinity-interactive',
-    label: 'LinkedIn',
+    label: 'linkedin',
     color: 'hover:text-blue-600'
   },
   {
     icon: Twitter,
     href: 'https://twitter.com/emfinity_dev',
-    label: 'Twitter',
+    label: 'twitter',
     color: 'hover:text-blue-400'
   },
   {
     icon: Mail,
     href: 'mailto:hello@emfinity.com',
-    label: 'Email',
+    label: 'email',
     color: 'hover:text-red-500'
   }
 ];

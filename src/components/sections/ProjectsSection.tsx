@@ -1,11 +1,61 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { ExternalLink, Github } from 'lucide-react';
-import { projects } from '../../data/projects';
 import { useLanguage } from '../../hooks/useLanguage';
 
 export const ProjectsSection: React.FC = () => {
   const { t } = useLanguage();
+  
+  const getProjectContent = (index: number) => {
+    const projectKeys = ['neuralNetwork', 'cloudInfra', 'realTimeCollab', 'aiCodeAssist', 'blockchainAnalytics', 'mobileFitness'] as const;
+    const key = projectKeys[index];
+    return t.projects.items[key];
+  };
+
+  const projects = [
+    {
+      id: 1,
+      technologies: ["React", "TypeScript", "D3.js", "TensorFlow.js"],
+      image: "https://images.pexels.com/photos/8386440/pexels-photo-8386440.jpeg?auto=compress&cs=tinysrgb&w=800",
+      github: "https://github.com",
+      demo: "https://demo.com"
+    },
+    {
+      id: 2,
+      technologies: ["Next.js", "Node.js", "AWS", "Docker", "Kubernetes"],
+      image: "https://images.pexels.com/photos/1181677/pexels-photo-1181677.jpeg?auto=compress&cs=tinysrgb&w=800",
+      github: "https://github.com",
+      demo: "https://demo.com"
+    },
+    {
+      id: 3,
+      technologies: ["React", "WebRTC", "Socket.io", "MongoDB", "Express"],
+      image: "https://images.pexels.com/photos/3184360/pexels-photo-3184360.jpeg?auto=compress&cs=tinysrgb&w=800",
+      github: "https://github.com",
+      demo: "https://demo.com"
+    },
+    {
+      id: 4,
+      technologies: ["TypeScript", "Python", "OpenAI API", "VS Code API"],
+      image: "https://images.pexels.com/photos/1181244/pexels-photo-1181244.jpeg?auto=compress&cs=tinysrgb&w=800",
+      github: "https://github.com",
+      demo: "https://demo.com"
+    },
+    {
+      id: 5,
+      technologies: ["Vue.js", "Web3.js", "Chart.js", "Solidity", "Ethereum"],
+      image: "https://images.pexels.com/photos/6801648/pexels-photo-6801648.jpeg?auto=compress&cs=tinysrgb&w=800",
+      github: "https://github.com",
+      demo: "https://demo.com"
+    },
+    {
+      id: 6,
+      technologies: ["React Native", "Firebase", "TensorFlow", "Redux"],
+      image: "https://images.pexels.com/photos/4164418/pexels-photo-4164418.jpeg?auto=compress&cs=tinysrgb&w=800",
+      github: "https://github.com",
+      demo: "https://demo.com"
+    }
+  ];
   return (
     <section id="projects" className="py-20 px-4 sm:px-6 lg:px-8">
       <div className="max-w-7xl mx-auto">
@@ -22,8 +72,7 @@ export const ProjectsSection: React.FC = () => {
             </span>
           </h2>
           <p className="text-xl text-gray-600 dark:text-gray-400 max-w-3xl mx-auto">
-            Explore our latest work and see how we're pushing the boundaries of technology 
-            to create meaningful digital experiences.
+            {t.projects.description}
           </p>
         </motion.div>
 
@@ -43,7 +92,7 @@ export const ProjectsSection: React.FC = () => {
                 <div className="relative overflow-hidden">
                   <motion.img
                     src={project.image}
-                    alt={project.title}
+                    alt={getProjectContent(index).title}
                     className="w-full h-48 object-cover transition-transform duration-500 group-hover:scale-110"
                     whileHover={{ scale: 1.1 }}
                   />
@@ -81,10 +130,10 @@ export const ProjectsSection: React.FC = () => {
                 {/* Project Content */}
                 <div className="p-6">
                   <h3 className="text-xl font-bold text-gray-900 dark:text-gray-100 mb-3 group-hover:text-primary-blue dark:group-hover:text-primary-turquoise transition-colors">
-                    {project.title}
+                    {getProjectContent(index).title}
                   </h3>
                   <p className="text-gray-600 dark:text-gray-400 mb-4 leading-relaxed">
-                    {project.description}
+                    {getProjectContent(index).description}
                   </p>
                   
                   {/* Technologies */}
