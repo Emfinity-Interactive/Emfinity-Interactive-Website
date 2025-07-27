@@ -180,22 +180,23 @@ export const Footer: React.FC = () => {
                 {t.footer.contact.title}
               </h3>
               <div className="space-y-3">
-                <div className="flex items-center space-x-3 text-gray-600 dark:text-gray-400">
-                  <Mail className="w-4 h-4 text-primary-blue" />
-                  <a 
-                    href={`mailto:${t.footer.contact.email}`}
-                    className="hover:text-primary-blue dark:hover:text-primary-turquoise transition-colors duration-300"
-                  >
-                    {t.footer.contact.email}
-                  </a>
-                </div>
-                <div className="flex items-center space-x-3 text-gray-600 dark:text-gray-400">
-                  <Phone className="w-4 h-4 text-primary-blue" />
-                  <span>{t.footer.contact.phone}</span>
-                </div>
-                <div className="flex items-center space-x-3 text-gray-600 dark:text-gray-400">
-                  <MapPin className="w-4 h-4 text-primary-blue" />
-                  <span>{t.footer.contact.address}</span>
+                {/* Konum ve CTA alt alta, ayrık bloklar */}
+                <div className="flex flex-col gap-6">
+                  <div className="flex items-center space-x-3 text-gray-600 dark:text-gray-400">
+                    <MapPin className="w-4 h-4 text-primary-blue" />
+                    <span>{t.footer.contact.address}</span>
+                  </div>
+                  <div className="bg-gray-100 dark:bg-slate-800 rounded-lg p-4 flex flex-col gap-2">
+                    <div className="text-base font-semibold text-gray-900 dark:text-gray-100">
+                      {t.contact.ctaTitle}
+                    </div>
+                    <div className="text-sm text-gray-600 dark:text-gray-400">
+                      {t.contact.ctaDescription}
+                    </div>
+                    <button className="mt-2 px-4 py-2 rounded-lg bg-primary-blue text-white font-semibold hover:bg-primary-turquoise transition-colors duration-300 w-fit self-start">
+                      {t.contact.ctaButton}
+                    </button>
+                  </div>
                 </div>
               </div>
             </motion.div>
